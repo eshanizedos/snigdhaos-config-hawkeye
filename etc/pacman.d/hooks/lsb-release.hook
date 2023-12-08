@@ -7,4 +7,4 @@ Target = lsb-release
 [Action]
 Description = Add ArcoLinux specific config
 When = PostTransaction
-Exec = /bin/sh -c "/usr/local/bin/arcolinux-lsb-release"
+Exec = /bin/sh -c "/usr/local/bin/lsb-release"
