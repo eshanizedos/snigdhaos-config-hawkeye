@@ -26,7 +26,7 @@
 #tput setaf 8 = light blue
 ##################################################################################################################
 
-echo "##################################################################################"
+echo
 echo "Skel is now a bash script and no longer an alias"
 echo
 echo "It makes it easy to get the new configurations in"
@@ -48,7 +48,7 @@ echo "to configure it, you can gain control again by typing 'skel' in a terminal
 echo
 echo "More info on this url:"
 echo "https://arcolinux.com/updating-your-system-with-skel-and-still-keeping-your-own-settings/"
-echo "##################################################################################"
+echo
 
 echo "Can we copy/paste the content from /etc/skel to your home directory? (y/n)"
 read response
@@ -60,34 +60,27 @@ if [[ "$response" == [yY] ]]; then
 		mkdir ~/.config
 	fi
 	echo
-	echo "##################################################################################"
 	echo "Making a backup of your .config folder to ~/.config-backup-"$time
 	echo "The bigger the .config folder the longer the backup takes"
 	echo "Be patient"
-	echo "##################################################################################"
 	echo
 
 	cp -Rf ~/.config ~/.config-backup-$time
 
 	echo
-	echo "##################################################################################"
 	echo "Now we overwrite your .config folder with the files from /etc/skel"
 	echo "The bigger the /etc/skel folder the longer it takes"
 	echo "Be patient"
-	echo "##################################################################################"
 	echo
 
 	cp -r /etc/skel/. $HOME
 
 	echo
-  	echo "##################################################################################"
 	echo "###################                   DONE                    ####################"
-	echo "##################################################################################"
+	echo
 
 else
   	echo
-  	echo "##################################################################################"
   	echo "NOTHING has been changed."
-  	echo "##################################################################################"
   	echo
 fi
