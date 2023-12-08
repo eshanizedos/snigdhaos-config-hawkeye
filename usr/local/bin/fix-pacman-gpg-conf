@@ -1,0 +1,33 @@
+#!/bin/bash
+#set -e
+
+echo
+echo "Copying /etc/pacman.d/gnupg/gpg.conf from ArcoLinux"
+echo
+
+file_boolean=0
+
+function check_file() {
+
+	file="/usr/local/share/arcolinux/gpg.conf"
+	if [[ -f $file ]];then
+    	echo $file " exists"
+    	file_boolean=1
+	else
+    	echo $file " doesn't exist"
+    	file_boolean=0
+	fi
+}
+
+check_file
+
+# pacman gpg config + not online
+if [ $file_boolean -eq 1 ] ; then
+	sudo cp /usr/local/share/arcolinux/gpg.conf /etc/pacman.d/gnupg/gpg.conf
+	echo "/etc/pacman.d/gnupg/gpg.conf copied from local system"
+fi
+
+
+echo
+echo "DONE - YOU CAN CLOSE THIS WINDOW"
+echo

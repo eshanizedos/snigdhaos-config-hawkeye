@@ -1,0 +1,22 @@
+#!/bin/bash
+#set -e
+
+echo
+echo "Install packages"
+echo
+
+sudo pacman -S  arcolinux-lxdm-theme-minimalo-git --noconfirm --needed
+
+echo
+echo "Change /etc/lxdm/lxdm.conf"
+echo
+
+sudo cp /etc/lxdm/lxdm.conf /etc/lxdm/lxdm.conf.bak
+sudo cp /usr/local/share/arcolinux/lxdm/lxdm.conf.original /etc/lxdm/lxdm.conf
+sudo sed -i "s/gtk_theme=Adwaita/gtk_theme=Arc-Dark/g" /etc/lxdm/lxdm.conf
+sudo sed -i "s/# bg=\/usr\/share\/backgrounds\/default.png/bg=\/usr\/share\/backgrounds\/arcolinux\/arco-wallpaper.jpg/g" /etc/lxdm/lxdm.conf
+sudo sed -i "s/theme=Industrial/theme=minimalo/g" /etc/lxdm/lxdm.conf
+
+echo
+echo "DONE - YOU CAN CLOSE THIS WINDOW"
+echo

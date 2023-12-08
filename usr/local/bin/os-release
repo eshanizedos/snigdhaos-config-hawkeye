@@ -1,0 +1,4 @@
+#!/bin/bash
+#set -e
+
+sudo cp /usr/local/share/arcolinux/release/os-release-snigdhaos /usr/lib/os-release

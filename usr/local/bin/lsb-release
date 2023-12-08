@@ -1,0 +1,4 @@
+#!/bin/bash
+#set -e
+
+sudo cp /usr/local/share/snigdhaos/release/lsb-release-arco /etc/lsb-release

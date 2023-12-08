@@ -1,0 +1,13 @@
+#!/bin/bash
+#set -e
+
+echo
+echo "Installing probe for people who do not have it"
+echo "prober will be the alias"
+echo
+
+sudo pacman -S --noconfirm --needed hw-probe
+
+echo
+echo "DONE - YOU CAN CLOSE THIS WINDOW"
+echo
